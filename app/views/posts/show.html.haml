@@ -11,12 +11,12 @@
       .description= simple_format(@post.description)
     .post_data
       = link_to "Visit Link", @post.link, class: "button"
-    %p.data
-      %i.fa.fa-comments-o
-      = pluralize(@post.comments.count, "Comment")
-    - if @post.user == current_user
-      = link_to "Edit", edit_post_path(@post), class: "data"
-      = link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Sure?" }, class: "data"
+      %p.data
+        %i.fa.fa-comments-o
+        = pluralize(@post.comments.count, "Comment")
+      - if @post.user == current_user
+        = link_to "Edit", edit_post_path(@post), class: "data"
+        = link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Sure?" }, class: "data"
 
 #comments
   %h2.comment_count= pluralize(@post.comments.count, "Comment")
